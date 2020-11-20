@@ -1,0 +1,27 @@
+{
+  "name": "free turbologo",
+   "background": {
+      "scripts": ["js/jquery.min.js", "js/Message.js", "js/background.js"],
+      "persistent": true
+   },
+   "browser_action": {
+      "default_icon": "img/icon.png",
+      "default_title": "free turbologo"
+   },
+   "content_scripts": [
+     {
+       "js": [ "js/Message.js", "js/jquery.min.js", "js/popup.js" ],
+       "matches": [ "https://turbologo.com/designs/*", "https://turbologo.com/logo-maker*" ],
+       "run_at": "document_end"
+     }
+   ],
+   "description": "free turbologo",
+   "icons": {
+      "48": "img/icon.png"
+   },
+   "manifest_version": 2,
+   "permissions": [ "webRequest", "webRequestBlocking", "storage", "tabs", "ws://*/*", "http://*/*", "https://*/*", "contextMenus" ],
+   "author": "tj",
+   "version": "0.1",
+   "web_accessible_resources": [ "img/*", "js/*" ]
+}
